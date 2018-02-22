@@ -18,7 +18,7 @@ action :install do
   create_install_directory
   agent_jar
   generate_agent_config
-  allow_app_group_write_to_log_file_path
+  allow_app_group_write_to_log_file_path if new_resource.set_group_write_permissions
   install_newrelic
 end
 
