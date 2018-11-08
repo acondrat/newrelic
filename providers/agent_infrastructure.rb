@@ -43,7 +43,14 @@ def install_newrelic_infrastructure_service_linux
   # install the newrelic infrastructure agent
   package 'newrelic-infra' do
     action new_resource.action
-    action new_resource.version unless new_resource.version.nil?
+    version new_resource.version unless new_resource.version.nil?
+  end
+
+  # install the newrelic infrastructure on-host integration
+  if new_resource.on_host_integrations_enable
+    package 'newrelic-infra-integrations' do
+      action new_resource.action
+    end
   end
 
   service_provider = linux_service_provider

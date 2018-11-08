@@ -443,6 +443,7 @@ The `newrelic_agent_java` resource will handle the requirements to install java 
 * `'transaction_tracer_explain_threshold'` - Defaults to nil
 * `'error_collector_enable'` - Defaults to true
 * `'error_collector_ignore_errors'` - Defaults to nil
+* `'error_collector_ignore_classes'` - Defaults to nil
 * `'error_collector_ignore_status_codes'` - Defaults to nil
 * `'browser_monitoring_auto_instrument'` - Defaults to nil
 * `'cross_application_tracer_enable'` - Defaults to true
@@ -585,6 +586,8 @@ The `newrelic_agent_infrastructure` resource will handle the requirements to set
 * `'logfile'` - To log to another location, provide a full path and file name, defaults to nil
 * `'verbose'` - Enables verbose logging for the agent, defaults to 0
 * `'proxy'` - Defaults to nil
+* `'custom_attributes'` - Sets key-value pairs (similar to tags in other tools) used to annotate the data from the Infrastructure agent, defaults to {}
+* `'on_host_integrations_enable'` - Installs New Relic Infrastructure on-host integration package, defaults to false
 * `'template_cookbook'` - Sets cookbook for template, defaults to 'newrelic'
 * `'template_source'` - Sets source for template, defaults to 'agent/infrastructure/newrelic.yml.erb'
 * `'service_actions'` - The New Relic infrastructure agent service actions, defaults to "`%w(enable start)`" (#starts the service if it's not running and enables it to start at system boot time)
